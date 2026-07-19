@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void print1ToN(int i, int n){
+void printNTo1(int i, int n){
     if (i>n) return;
 
-    print1ToN(i+1, n);
+    printNTo1(i+1, n);
     cout<< i << " ";
 }
 
@@ -14,7 +14,7 @@ int main(){
     cout<< "Enter a number: ";
     cin>> n;
 
-    print1ToN(i,n);
+    printNTo1(i,n);
 
     return 0;
 }
