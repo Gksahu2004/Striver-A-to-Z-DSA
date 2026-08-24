@@ -54,6 +54,16 @@ void rearrangebysign2(int arr[], int n){
     }
 }
 
+// if +ve numbers count > -ve numbers or -ve numbers count > +ve numbers
+void rearrangebysign3(int arr[], int n){
+    int pve = 0; 
+    int nve = 0;
+    vector<int> vec;
+    for(int i = 0; i<n ; i++){
+
+    }
+}
+
 int main(){
     int n;
     cout<< "Enter the size of array: ";
@@ -66,7 +76,8 @@ int main(){
     }
 
     // rearrangebysign1(arr, n);
-    rearrangebysign2(arr, n);
+    // rearrangebysign2(arr, n);
+    rearrangebysign3(arr, n);
 
     // for(int i = 0; i<n; i++){
     //     cout << arr[i] << " ";
