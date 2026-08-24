@@ -5,6 +5,8 @@ using namespace std;
 
 
 // here arr represents prices array
+// TC = O(N)
+// SC = O(1)
 void buyandsellstocks(int arr[], int n){
     int ansprofit = 0;
     int ansbuy = -1;
