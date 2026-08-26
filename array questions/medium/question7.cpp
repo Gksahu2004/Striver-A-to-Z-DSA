@@ -55,12 +55,50 @@ void rearrangebysign2(int arr[], int n){
 }
 
 // if +ve numbers count > -ve numbers or -ve numbers count > +ve numbers
+// TC = O(N) + O(MIN(pos, neg)) + O(left overs)
+// WORST TC = O(N) + O(N) [IF ALL ARE +VE OR -VE OR SIZE OF BOTH NOT EQUAL] + O(0) = O(N) + O(N) = O(2N)
+// BEST TC = O(N) + O(N/2) [IF SIZE OF NOTH POS AND NEG ARE SAME] + O(0) = O(N) + O(N/2)
+// SC = O(pos) + O(neg) = O(N)
 void rearrangebysign3(int arr[], int n){
-    int pve = 0; 
-    int nve = 0;
-    vector<int> vec;
+    vector<int> pve;
+    vector<int> nve;
     for(int i = 0; i<n ; i++){
+        if(arr[i] >= 0){
+            pve.push_back(arr[i]);
+        }
+        else{
+            nve.push_back(arr[i]);
+        }
+    }
 
+    int i = 0;
+    int min;
+    if (pve.size() <= nve.size()){
+        min = pve.size();
+    }
+    else{
+        min = nve.size();
+    }
+    for( ; i<min; i++){
+        arr[2*i] = pve[i];
+        arr[2*i+1] = nve[i];
+    }
+
+    i = min*2;
+    int j = min;
+    if(pve.size() >= nve.size()){
+        while(i<n){  // the condition is same as while(j < pve.size())
+            arr[i] = pve[j];
+            i++;
+            j++;
+        }
+    }
+    else{
+        while(i<n){ // the condition is same as while(j < nve.size())
+            arr[i] = nve[j];
+            i++;
+            j++;
+        }
     }
 }
 
@@ -79,9 +117,9 @@ int main(){
     // rearrangebysign2(arr, n);
     rearrangebysign3(arr, n);
 
-    // for(int i = 0; i<n; i++){
-    //     cout << arr[i] << " ";
-    // }
+    for(int i = 0; i<n; i++){
+        cout << arr[i] << " ";
+    }
 
     return 0;
 }
