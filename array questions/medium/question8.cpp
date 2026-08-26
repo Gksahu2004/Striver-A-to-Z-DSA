@@ -4,6 +4,8 @@
 using namespace std;
 
 // optimal solution
+// TC = O(3N)
+// SC = O(1)
 void nextPermuatation(int arr[], int n){
     int breakpoint;
     int flag = 0;
