@@ -4,6 +4,8 @@
 using namespace std;
 
 // brute force
+// TC = O(M*N*(M+N)) + O(M*N) = O(N^3)  // ALMOST
+// SC = O(1)
 void markrow(int matrix[][100], int i, int column){ // mark row -1 of that if not 0
     for(int j = 0; j<column; j++){
         if (matrix[i][j] != 0){
@@ -37,6 +39,8 @@ void setmatrixzeros1(int matrix[][100], int row, int column){
 }
 
 // better solution
+// TC = O(M*N) + O(M*N) = O(2*M*N)
+// SC = O(M) + O(N) = O(2*N)  // ALMOST
 void setmatrixzeros2(int matrix[][100], int row, int column){
     int rowMatrix[row];
     int colMatrix[column];
@@ -60,6 +64,8 @@ void setmatrixzeros2(int matrix[][100], int row, int column){
 
 
 // optimal solution
+// TC = O(M*N) + O(M*N) = O(2*M*N)
+// SC = O(1)
 void setmatrixzeros3(int matrix[][100], int row, int column){
     int col0;
     // rowMatrix: [...][0] to [...][0]
